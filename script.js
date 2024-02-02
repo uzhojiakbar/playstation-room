@@ -110,7 +110,7 @@ let rooms = [
         isOpen: false,
     },
     {
-        id: 1,
+        id: 8,
         title: '8-xona PS3',
         type: 'PS3',
         open: {
