@@ -6,7 +6,8 @@ const info = document.getElementById("info")
 let rooms = [
     {
         id: 1,
-        title: '1-xona',
+        title: '1-xona PS3',
+        type: 'PS3',
         open: {
             hour: 0,
             minute: 0,
@@ -20,7 +21,8 @@ let rooms = [
     },
     {
         id: 2,
-        title: '2-xona',
+        title: '2-xona PS3',
+        type: 'PS3',
         open: {
             hour: 0,
             minute: 0,
@@ -34,7 +36,8 @@ let rooms = [
     },
     {
         id: 3,
-        title: '3-xona',
+        title: '3-xona PS3',
+        type: 'PS3',
         open: {
             hour: 0,
             minute: 0,
@@ -45,11 +48,11 @@ let rooms = [
         },
         sum: 0,
         isOpen: false,
-
     },
     {
         id: 4,
-        title: '4-xona',
+        title: '3-xona PS5',
+        type: 'PS5',
         open: {
             hour: 0,
             minute: 0,
@@ -60,11 +63,56 @@ let rooms = [
         },
         sum: 0,
         isOpen: false,
-
     },
     {
         id: 5,
-        title: '5-xona',
+        title: '5-xona PS3',
+        type: 'PS3',
+        open: {
+            hour: 0,
+            minute: 0,
+        },
+        close: {
+            hour: 0,
+            minute: 0,
+        },
+        sum: 0,
+        isOpen: false,
+    },
+    {
+        id: 6,
+        title: '6-xona PS3',
+        type: 'PS3',
+        open: {
+            hour: 0,
+            minute: 0,
+        },
+        close: {
+            hour: 0,
+            minute: 0,
+        },
+        sum: 0,
+        isOpen: false,
+    },
+    {
+        id: 7,
+        title: '7-xona PS3',
+        type: 'PS3',
+        open: {
+            hour: 0,
+            minute: 0,
+        },
+        close: {
+            hour: 0,
+            minute: 0,
+        },
+        sum: 0,
+        isOpen: false,
+    },
+    {
+        id: 1,
+        title: '8-xona PS3',
+        type: 'PS3',
         open: {
             hour: 0,
             minute: 0,
@@ -81,6 +129,8 @@ let rooms = [
 let oth = {
     sum: 0,
     oneHour: 15000,
+    oneHourPS3: 10000,
+    oneHourPS5: 20000,
 
     dailyClient: 0,
 }
@@ -119,7 +169,13 @@ const closeTime = (id) => {
     }
 
     let minute = (room.close.minute - room.open.minute)
-    room.sum = (hour + minute) * (oth.oneHour / 60)
+    if (room.type === 'PS5') {
+        room.sum = Math.floor((hour + minute) * (oth.oneHourPS5 / 60))
+    } else if (room.type === 'PS3') {
+        room.sum = Math.floor((hour + minute) * (oth.oneHourPS3 / 60))
+    } else {
+        room.sum = Math.floor((hour + minute) * (oth.oneHour / 60))
+    }
     Start()
 
     // open -  close
@@ -146,8 +202,6 @@ const getMoney = (id) => {
     room.isOpen = false;
 
     oth.dailyClient += 1
-    console.log(oth);
-
     Start()
 }
 
@@ -166,12 +220,8 @@ const closeMarket = () => {
         money: oth.sum,
         client: oth.dailyClient,
     }]
-
-    oth = {
-        sum: 0,
-        oneHour: 15000,
-        dailyClient: 0,
-    }
+    oth.sum = 0;
+    oth.dailyClient = 0
 
     Start()
 }
