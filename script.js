@@ -51,7 +51,7 @@ let rooms = [
     },
     {
         id: 4,
-        title: '3-xona PS5',
+        title: '4-xona PS5',
         type: 'PS5',
         open: {
             hour: 0,
