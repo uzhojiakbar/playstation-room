@@ -17,38 +17,46 @@
 
 body {
     background-color: #212121;
-    padding: 0 26px;
+    padding: 0px 25px;
 }
 
+
+.Pointer {
+    cursor: pointer;
+}
 
 .main {
     display: flex;
     flex-direction: column;
 
-    gap: 40px;
+    gap: 25px;
 
     max-width: 1440px;
     width: 100%;
-    min-width: 520px;
+    min-width: 300px;
     margin: 10px auto;
+
 }
 
 .mainTitle {
     font-weight: 700;
+
+    text-align: center;
 }
 
-.xonalar {
+
+.mainPlay {
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
 
 
-    align-items: flex-start;
-    /* gap: 20px; */
-
+.xonalar {
     border: 1px solid var(--back2);
-    max-width: 1000px;
-    min-width: 1000px;
-    width: 1000px;
+    max-width: 900px;
+    width: 900px;
+    min-width: 900px;
 }
 
 .room {
@@ -61,7 +69,10 @@ body {
 
 
     font-size: 18px;
+
 }
+
+
 
 .back1 {
     background-color: var(--back1);
@@ -77,10 +88,18 @@ body {
 
     border-radius: 10px;
     padding: 5px 8px;
-    height: 40px;
+    height: 35px;
     width: 150px;
 
     outline: none;
+}
+
+.input:disabled {
+    background-color: var(--back2);
+}
+
+.input:focus {
+    border: 1px solid white;
 }
 
 button {
@@ -92,14 +111,19 @@ button {
     outline: none;
 
     cursor: pointer;
-
+    height: 35px;
 }
 
-.mainPlay {
-    display: flex;
-    gap: 20px;
-    width: 100%;
+button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
+
+button:active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* *** Daily */
 
 .daily {
     padding: 10px 0;
@@ -107,4 +131,119 @@ button {
     flex-direction: column;
 
     gap: 30px;
+
+}
+
+
+.title {
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px 0;
+}
+
+.smallnumber {
+    min-width: 50px;
+    max-width: 80px;
+}
+
+.verysmallnumber {
+    min-width: 40px;
+    max-width: 40px;
+}
+
+.changePrice {
+    display: flex;
+    gap: 30px;
+
+    align-items: center;
+
+    height: 70px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.info {
+    max-height: 700px;
+    overflow: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+
+
+    position: relative;
+
+}
+
+.top {
+    position: sticky;
+    background-color: #212121;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.minuses {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: 1px solid #474545;
+    max-height: 700px;
+
+    margin-top: 50px;
+    overflow: auto;
+}
+
+
+.roomDaily {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    height: 80px;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 18px;
+
+    width: 100%;
+}
+
+
+.minusRow {
+    display: flex;
+    height: 70px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.minusRow>div {
+    width: 33%;
+}
+
+.rightborder {
+    border-right: 1px solid #474545;
+}
+
+.back2>.rightborder {
+    border-right: 1px solid #212121;
+}
+
+
+/* ***ELse */
+
+.notFund {
+    width: 100% !important;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

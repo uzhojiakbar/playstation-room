@@ -10,17 +10,83 @@
     <div class="main">
         <h1 class="mainTitle">Playstation</h1>
 
+
         <div class="mainPlay">
             <div class="xonalar" id="xonalar">
             </div>
             <div id="daily" class="daily">
+                <div class="changePrice">
+                    <div class="option">
+                        <p class="title">PS3 Narxi:</p>
+                        <input 
+                            type="text"
+                            class="input smallnumber"
+                            placeholder="PS3 narxi"
+
+                            id="PS3"
+                        >
+                    </div>
+                    <div class="option">
+                        <p class="title">PS5 Narxi:</p>
+                        <input 
+                            type="text"
+                            class="input smallnumber"
+                            placeholder="PS5 narxi"
+                            id="PS5"
+                        >
+                    </div>
+                    <div class="option">
+                        <div class="title">Sozlash:</div>
+                        <button id="changeBalansButton" onclick="changePSBalans()">O'zgartirish</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="title">
+                        Kunlik Foyda:
+                    </p>
+                    <span id="todayBalans">
+                    </span>
+                </div>
+                <h2>
+                    <p class="title">
+                        Kunlik hisobdan ayrish:
+                    </p>
+                    <input 
+                        class="input smallnumber"
+                        type="text" 
+                        placeholder="summa"
+                        id="minusSUm"
+                    > 
+                    <input 
+                        class="input"
+                        type="text" 
+                        placeholder="Tavsif..."
+                        id="minusSumDesc"
+                    > 
+                    <button 
+                        onclick="onChangeMinus()">
+                        Ayrish
+                    </button>
+                </h2>
+                <h2>
+                    Bugungi clientlar: <span id="TodayClients"></span> 
+                </h2>
+                <button onclick="closeMarket()">
+                    Playsationni Yopish
+                </button>
+            </div>
+        </div>
+        <div class="mainPlay">
+            <div id="info" class="xonalar info">
+        
+            </div>
+        </div>
+        <div class="mainPlay">
+            <div class="minuses" id="minusesBody">
             </div>
         </div>
     </div>
-
-    <div id="info" class="xonalar">
-
-    </div>
+    <!-- <input type="text" onchange> -->
 </body>
 <script src="./script.js" ></script>
 </html>
